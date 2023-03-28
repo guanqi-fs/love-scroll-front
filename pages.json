@@ -1,0 +1,107 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path" : "pages/login/login",
+			"style" :                                                                                    
+			{
+				"navigationBarTitleText": "login"
+			}
+			
+		}
+		,{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+        ,{
+            "path" : "pages/register/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "register"
+            }
+            
+        }
+        ,{
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/tasks/tasks",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/rewards/rewards",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/profile/profile",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+        ,{
+            "path" : "pages/anniversary/anniversary",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": ""
+            }
+            
+        }
+    ],
+	  "globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "情侣互动工具",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	  },
+	  "tabBar": {
+		"color": "#999999",
+		"selectedColor": "#4A4A4A",
+		"borderStyle": "white",
+		"backgroundColor": "#FFFFFF",
+		"list": [
+		  {
+			"pagePath": "pages/home/home",
+			"iconPath": "static/icons/home.png",
+			"selectedIconPath": "static/icons/home-active.png",
+			"text": "首页"
+		  },
+		  {
+			"pagePath": "pages/tasks/tasks",
+			"iconPath": "static/icons/tasks.png",
+			"selectedIconPath": "static/icons/tasks-active.png",
+			"text": "任务"
+		  },
+		  {
+			"pagePath": "pages/rewards/rewards",
+			"iconPath": "static/icons/rewards.png",
+			"selectedIconPath": "static/icons/rewards-active.png",
+			"text": "奖品"
+		  },
+		  {
+			"pagePath": "pages/profile/profile",
+			"iconPath": "static/icons/profile.png",
+			"selectedIconPath": "static/icons/profile-active.png",
+			"text": "我的"
+		  }
+		]
+	  },
+	"uniIdRouter": {}
+}
+
+// #5396ff
