@@ -11,7 +11,9 @@
 </template>
 
 <script>
-import { registerUser } from '../../api/api';
+	
+import { login } from '@/api/auth';
+
 export default {
   data() {
     return {

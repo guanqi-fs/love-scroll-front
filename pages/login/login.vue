@@ -9,38 +9,41 @@
     </view>
   </view>
 </template>
-
 <script>
+import { login } from '@/api/auth';
+
 export default {
-  import { loginUser } from '@/api';
 
   data() {
     return {
       username: '',
-      password: '',
+      password: ''
     };
   },
   methods: {
-	  async login() {
-		if (!this.username || !this.password) {
-		  uni.showToast({ title: '用户名和密码不能为空', icon: 'none' });
-		  return;
-		}
-		try {
-		  const response = await loginUser(this.username, this.password);
-		  if (response.statusCode === 200 && response.data.code === 10000) {
-			uni.showToast({ title: '登录成功', icon: 'success' });
-			// 存储token
-			uni.setStorageSync('token', response.data.data.token);
-			// 登录成功后的操作，例如跳转到首页
-			uni.switchTab({ url: '/pages/home/home' });
-		  } else {
-			uni.showToast({ title: '登录失败，请重试', icon: 'none' });
-		  }
-		} catch (error) {
-		  uni.showToast({ title: '请求错误，请重试', icon: 'none' });
-		}
-	  },
+    async login() {
+      try {
+        const data = {
+          username: this.username,
+          password: this.password,
+        };
+        const response = await login(data);
+        uni.setStorageSync('token', response.token);
+        uni.showToast({
+          title: '登录成功',
+          icon: 'success',
+        });
+        uni.switchTab({
+          url: '/pages/home/home',
+        });
+      } catch (err) {
+        console.log(err);
+        uni.showToast({
+          title: '登录失败',
+          icon: 'none',
+        });
+      }
+    },
 	toPage() {
 		uni.navigateTo({
 			url:"/pages/register/register"
